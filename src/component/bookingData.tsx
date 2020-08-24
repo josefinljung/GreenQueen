@@ -8,10 +8,13 @@ class Booking extends Component{
 
 //använd array
 // mappa listan och skapa list av bookinglist ....
-  
+ 
+componentDidMount(){
+    this.getData();
+}
     async getData(){
 
-       const response=  axios.get("http://localhost:8000/dummybookings")
+       const response= await axios.get("http://localhost:8000/dummybookings")
        console.log(response)
     }
 
