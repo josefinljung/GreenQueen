@@ -2,11 +2,11 @@ import React, {useEffect} from "react";
 import axios from "axios";
 
 
-    export default function getDataComponent(){
+    export default function BookingData(){
 
         useEffect(() => {
         axios.get("http://localhost:8000/dummybookings").then(theData=>{
-        theData.data
+        console.log(theData.data);
         });
 
         },[] );
