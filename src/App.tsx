@@ -5,10 +5,10 @@ import Booking from "./component/booking/bookingData"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <Booking />
+
+      <Booking></Booking>
      
-      </header>
+
     </div>
   );
 }

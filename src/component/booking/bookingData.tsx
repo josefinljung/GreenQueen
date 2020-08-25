@@ -1,30 +1,19 @@
-import React, {Component} from "react";
+import React, {useEffect} from "react";
 import axios from "axios";
 
-class Booking extends Component{
 
+    export default function getDataComponent(){
 
-//använd array
-// mappa listan och skapa list av bookinglist ....
- 
-componentDidMount(){
-    this.getData();
-}
-    async getData(){
+        useEffect(() => {
+        axios.get("http://localhost:8000/dummybookings").then(theData=>{
+        theData.data
+        });
 
-       const response= await axios.get("http://localhost:8000/dummybookings")
-       console.log(response)
+        },[] );
+
+        return (
+            <div>
+                hello
+            </div>
+        )
     }
-
-render(){
-
-    return(
-        <div>
-            hello you
-        </div>
-    )
-}
-}
-
-
-export default Booking;
