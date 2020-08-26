@@ -8,8 +8,6 @@ export default function GuestData () {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState(0);
 
-    
-  
 
     useEffect(() => {
         axios.get("/dummybookings").then(theData=>{
@@ -21,7 +19,7 @@ export default function GuestData () {
         return (
             <div>
                 <input type="string" value={firstName}></input>
-
+                <input type="string" value={lastName}></input>
             </div>
         )
     }
