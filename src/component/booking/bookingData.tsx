@@ -2,19 +2,19 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 
+    interface IBookingsProps {
+        theBookingData(bookings: []):void;
+    }
 
-
-    export default function BookingData(){
+    export default function BookingData(props: IBookingsProps){
 
     
         const [theBookings, setTheBookings] = useState([]);
-        
-            
+           
     
         useEffect(() => {
-        axios.get("http://localhost:8000/bookings").then(theData=>{
-            // const data = theData.data;
-            // setTheBookings(theBookings);
+        axios.get("").then(theData=>{
+
             console.log(theData.data);
         })
         .catch(()=>{
@@ -23,18 +23,12 @@ import axios from "axios";
 
         },[])
 
-
-        
+        // function sendTheBooking(){
+        //     props.theBookingData(theBookings);
+        // }
 
         return (
-            <div>
-                Hello Admin
-
-                <h2>All Bookings</h2>
-                <ul>
-                    
-                </ul>
-            </div>
+            <div></div>
         )
     }
 
