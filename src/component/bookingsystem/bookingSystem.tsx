@@ -1,6 +1,7 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import axios from "axios";
 import BookingData from "../booking/bookingData";
+import { render } from "@testing-library/react";
  
 export default function BookingSystem(){
  
@@ -9,19 +10,22 @@ export default function BookingSystem(){
     const [bookingDate, setBookingDate] = useState(0);
     const [bookingTime, setBookingTime] = useState('');
     const [amountOfGuest, setAmountOfGuest] = useState(0);
- 
-    function updateDate(e: ChangeEvent<HTMLInputElement>){
-        console.log(e.target.value)
-        
-        setBookingDate(parseInt(e.target.value));
 
-    }
-        function updateTime(e: ChangeEvent<HTMLSelectElement>){
-        console.log(e.target.value)
+ 
+        function updateDate(e: ChangeEvent<HTMLInputElement>){
+           
+            console.log(e.target.value)
+            
+            setBookingDate(parseInt(e.target.value));
+
+        }
+            function updateTime(e: ChangeEvent<HTMLSelectElement>){
+           
+            console.log(e.target.value)
+            
+            setBookingTime(e.target.value);
         
-        setBookingTime(e.target.value);
-        
-    }
+        }
 
         function updateAmount(e: ChangeEvent<HTMLSelectElement>){
 
@@ -31,21 +35,42 @@ export default function BookingSystem(){
             
         }
 
-
-
-    
         function searchForTable () {
-        axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(searchData=>{
-        console.log(searchData.data);
+
+            axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(searchData=>{
+            console.log(searchData.data);
+            
+             //searchData.data.table.counts
+
+            //update state 
+
+        
         
         });
         
         //setBookingDate();
-        
         }
- 
-        // bind function with onchange event with typescript 
+        // denna funktion ska koras om det inte finns nagra bord??
+        // function render() {
+        //     if (searchData < 15 ){
+        //         return (
+        //             <div>
+        //                 <p>No tables avaliabe</p>
+        //             </div>
+        //         )
+        //     } else  {(searchData > 15)
+        //         return (
+        //             <div>
+        //                 <p>Avaliable</p>
+        //             </div>
+        //         ) 
+        //     }
+
         return (
+
+
+
+
             <div>
                     <select onChange={updateTime}>
                         <option value="18:00">18:00</option> 
@@ -63,5 +88,4 @@ export default function BookingSystem(){
                     <button type="button" onClick={searchForTable}>Search</button>
             </div>
         )
- 
 }
