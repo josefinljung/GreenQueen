@@ -17,12 +17,13 @@ export default function BookingSystem(){
         });
 
         function updateTable(){
+     
 
-            setCountTable(countTable = searchData)
+            //setState with searchData.data.tablenumber
+            setCountTable(  {countTable : searchData.data.table })
         
 
         }
-
 
         function searchForTable (e: ChangeEvent<HTMLInputElement>) {
 
@@ -35,9 +36,10 @@ export default function BookingSystem(){
 
     }, []);
 
+    // bind function with onchange event with typescript 
     return (
         <div>
-            <input type="date" value={bookingDate} onChange={updateTable} />
+            <input type="date" value={bookingDate} onChange={updateTable}/>
             <input type="time" value={bookingTime} onChange={updateTable} />
             <button type="button" onClick={searchForTable}>Search</button>
 
