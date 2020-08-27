@@ -1,19 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, ChangeEvent } from "react";
 import axios from "axios";
 
 export default function BookingSystem(){
+
+    const [countTable, setCountTable] = useState(0);
+    const [searchData, setSearchData] = useState(0);
+    const [bookingDate, setBookingDate] = useState(0);
+    const [bookingTime, setBookingTime] = useState(0);
+
 
     useEffect(() => {
 
         axios.get("http://localhost:8000/search").then(searchData=>{
             console.log(searchData.data);
+            
         });
+
+        function updateTable(){
+
+            setCountTable(countTable = searchData)
+        
+
+        }
+
+
+        function searchForTable (e: ChangeEvent<HTMLInputElement>) {
+
+            setBookingDate(parseInt(e.target.value));
+
+        }
+
+        // state = searchData.data.table
+        // state < 15 ?   fullbokat </div>  : <form>  booking formulret </form>
 
     }, []);
 
     return (
         <div>
-            IT WORKS
+            <input type="date" value={bookingDate} onChange={updateTable} />
+            <input type="time" value={bookingTime} onChange={updateTable} />
+            <button type="button" onClick={searchForTable}>Search</button>
+
         </div>
     )
 
