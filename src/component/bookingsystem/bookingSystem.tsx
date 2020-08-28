@@ -44,9 +44,23 @@ export default function BookingSystem(){
             
              //searchData.data.table.counts
             //update state 
+
+            
+        if ( searchData.data.table.counts < 15 ){
+            return (
+                <GuestData></GuestData>
+            )
+
+        } else {
+
+            return (
+                <div>Fully booked fool!</div>
+            )
+        }
         });
      }
 
+     return (
             <div>
                 <select onChange={updateTime}>
                     <option value="18:00">18:00</option> 
@@ -63,21 +77,7 @@ export default function BookingSystem(){
                 </select>
                 <button type="button" onClick={searchForTable}>Search</button>
             </div>
-
+     )
 
      // denna funktion ska koras om det inte finns nagra bord??
-
-        if ( searchData < 15 ){
-            return (
-                <GuestData></GuestData>
-            )
-
-        } else {
-
-            return (
-                <div>Fully booked fool!</div>
-            )
-        }
-
-
 }
