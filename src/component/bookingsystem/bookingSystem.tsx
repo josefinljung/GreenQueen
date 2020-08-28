@@ -43,20 +43,20 @@ export default function BookingSystem(){
             console.log(searchData.data);
             
              //searchData.data.table.counts
-            //update state 
+            //update state
 
             
-        if ( searchData.data.table.counts < 15 ){
+        if ( searchData.data.table < 15){
             return (
                 <GuestData></GuestData>
             )
 
-        } else {
+        }
 
             return (
-                <div>Fully booked fool!</div>
+                <div>Fully booked fool!
+                </div>
             )
-        }
         });
      }
 
