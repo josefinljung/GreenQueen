@@ -2,6 +2,7 @@ import React, { useEffect, useState, ChangeEvent } from "react";
 import axios from "axios";
 import BookingData from "../booking/bookingData";
 import { render } from "@testing-library/react";
+import GuestData from "../guest/guestData";
  
 export default function BookingSystem(){
  
@@ -19,7 +20,8 @@ export default function BookingSystem(){
             setBookingDate(parseInt(e.target.value));
 
         }
-            function updateTime(e: ChangeEvent<HTMLSelectElement>){
+
+        function updateTime(e: ChangeEvent<HTMLSelectElement>){
            
             console.log(e.target.value)
             
@@ -41,51 +43,41 @@ export default function BookingSystem(){
             console.log(searchData.data);
             
              //searchData.data.table.counts
-
             //update state 
-
-        
-        
         });
-        
-        //setBookingDate();
-        }
-        // denna funktion ska koras om det inte finns nagra bord??
-        // function render() {
-        //     if (searchData < 15 ){
-        //         return (
-        //             <div>
-        //                 <p>No tables avaliabe</p>
-        //             </div>
-        //         )
-        //     } else  {(searchData > 15)
-        //         return (
-        //             <div>
-        //                 <p>Avaliable</p>
-        //             </div>
-        //         ) 
-        //     }
-
-        return (
-
-
-
+     }
 
             <div>
-                    <select onChange={updateTime}>
-                        <option value="18:00">18:00</option> 
-                        <option value="21:00">21:00</option>
-                    </select>
-                    <input type="date" value={bookingDate} onChange={updateDate} />
-                    <select onChange={updateAmount}>
-                        <option value="1">1</option> 
-                        <option value="2">2</option>
-                        <option value="3">3</option> 
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                    </select>
-                    <button type="button" onClick={searchForTable}>Search</button>
+                <select onChange={updateTime}>
+                    <option value="18:00">18:00</option> 
+                    <option value="21:00">21:00</option>
+                </select>
+                <input type="date" value={bookingDate} onChange={updateDate} />
+                <select onChange={updateAmount}>
+                    <option value="1">1</option> 
+                    <option value="2">2</option>
+                    <option value="3">3</option> 
+                    <option value="4">4</option> 
+                    <option value="5">5</option> 
+                    <option value="6">6</option> 
+                </select>
+                <button type="button" onClick={searchForTable}>Search</button>
             </div>
-        )
+
+
+     // denna funktion ska koras om det inte finns nagra bord??
+
+        if ( searchData < 15 ){
+            return (
+                <GuestData></GuestData>
+            )
+
+        } else {
+
+            return (
+                <div>Fully booked fool!</div>
+            )
+        }
+
+
 }
