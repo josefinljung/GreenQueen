@@ -5,12 +5,13 @@ import { render } from "@testing-library/react";
 import GuestData from "../guest/guestData";
  
 export default function BookingSystem(){
- 
-    const [countTable, setCountTable] = useState(0);
-    const [searchData, setSearchData] = useState(0);
+
+    const [searchData, setSearchData] = useState([]);
     const [bookingDate, setBookingDate] = useState(0);
     const [bookingTime, setBookingTime] = useState('');
     const [amountOfGuest, setAmountOfGuest] = useState(0);
+    const [avaiableTables,setAvaiableTables] = useState(true);
+    const [showGuestForm,setShowGuestForm] = useState(false);
 
  
         function updateDate(e: ChangeEvent<HTMLInputElement>){           
@@ -27,31 +28,30 @@ export default function BookingSystem(){
             console.log(e.target.value)            
             setAmountOfGuest(parseInt(e.target.value));            
         }
+        
+        function searchResult(r: any){
+            setSearchData(r) // listan med bokningar
+        }
 
         function searchForTable () {
-            axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(searchData=>{
-            console.log(searchData.data);            
-             //searchData.data.table.counts
-            //update state
+            axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(resData=>{
+            console.log(resData.data);            
 
-            
-            if ( searchData.data.table.counts < 15 ){
-                return (
-                    <GuestData></GuestData>
-                )
-            } else {
-                return (
-                    <div>Fully booked fool!</div>
-                )
+            searchResult(resData.data);
+
+            if (searchData.length < 15 ){ // filtrera om längden på datum & tid är mer än 15 rader? 
+               //lagra state för rendera två olka divar
+               setShowGuestForm(true) 
+               
             }
         });
      }
 
      return (
-
         <React.Fragment>
             <div>
                 <select onChange={updateTime}>
+                <option value="0">Servings</option> 
                     <option value="18:00">18:00</option> 
                     <option value="21:00">21:00</option>
                 </select>
@@ -67,12 +67,11 @@ export default function BookingSystem(){
                 <button type="button" onClick={searchForTable}>Search</button>
             </div>
 
-            
-         <GuestData></GuestData>
-            
+             {showGuestForm ? 
+             <GuestData></GuestData>
+             : null
+            }
          </React.Fragment>
             
      )
-
-     // denna funktion ska koras om det inte finns nagra bord??
 }

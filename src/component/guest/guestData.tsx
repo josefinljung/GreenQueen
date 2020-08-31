@@ -65,7 +65,7 @@ export default function GuestData () {
 
                 <label>By checking this box you agree to our terms and conditions and privacy policy.</label>
 
-                    <input name="gdpr" id="gdpr" type="checkbox" checked={this.state.setGdpr}></input>
+                    {/* <input name="gdpr" id="gdpr" type="checkbox" checked={this.state.setGdpr}></input> */}
 
 
 

@@ -11,7 +11,7 @@ export interface GuestForm {
 
 
     function guestForm(){
-// state object lagrar vårt form sen uppdateras det med newstate :)
+/* // state object lagrar vårt form sen uppdateras det med newstate :)
     let defaultValue: GuestForm = { FirstName: '', LastName: '', Email: '', Phone:0 };
 
         const [guestFormValues, setGuestFormValues] = useReducer(
@@ -19,7 +19,7 @@ export interface GuestForm {
             defaultValue
         );
 
-        update(e: ChangeEvent<any>) {
+        //update(e: ChangeEvent<any>) {
             const {name, value} = e.target;
 
             setGuestFormValues({[name:]value});
@@ -40,5 +40,5 @@ export interface GuestForm {
             </div>
         </form>
             
-        );
+        ); */
     }
