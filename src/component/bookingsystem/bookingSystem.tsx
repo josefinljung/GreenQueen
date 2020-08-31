@@ -13,54 +13,43 @@ export default function BookingSystem(){
     const [amountOfGuest, setAmountOfGuest] = useState(0);
 
  
-        function updateDate(e: ChangeEvent<HTMLInputElement>){
-           
-            console.log(e.target.value)
-            
+        function updateDate(e: ChangeEvent<HTMLInputElement>){           
+            console.log(e.target.value)            
             setBookingDate(parseInt(e.target.value));
-
         }
 
-        function updateTime(e: ChangeEvent<HTMLSelectElement>){
-           
-            console.log(e.target.value)
-            
-            setBookingTime(e.target.value);
-        
+        function updateTime(e: ChangeEvent<HTMLSelectElement>){           
+            console.log(e.target.value)            
+            setBookingTime(e.target.value);        
         }
 
         function updateAmount(e: ChangeEvent<HTMLSelectElement>){
-
-            console.log(e.target.value)
-            
-            setAmountOfGuest(parseInt(e.target.value));
-            
+            console.log(e.target.value)            
+            setAmountOfGuest(parseInt(e.target.value));            
         }
 
         function searchForTable () {
-
             axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(searchData=>{
-            console.log(searchData.data);
-            
+            console.log(searchData.data);            
              //searchData.data.table.counts
             //update state
 
             
-        if ( searchData.data.table < 15){
-            return (
-                <GuestData></GuestData>
-            )
-
-        }
-
-            return (
-                <div>Fully booked fool!
-                </div>
-            )
+            if ( searchData.data.table.counts < 15 ){
+                return (
+                    <GuestData></GuestData>
+                )
+            } else {
+                return (
+                    <div>Fully booked fool!</div>
+                )
+            }
         });
      }
 
      return (
+
+        <React.Fragment>
             <div>
                 <select onChange={updateTime}>
                     <option value="18:00">18:00</option> 
@@ -77,6 +66,12 @@ export default function BookingSystem(){
                 </select>
                 <button type="button" onClick={searchForTable}>Search</button>
             </div>
+
+            
+         <GuestData></GuestData>
+            
+         </React.Fragment>
+            
      )
 
      // denna funktion ska koras om det inte finns nagra bord??
