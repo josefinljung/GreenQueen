@@ -37,14 +37,13 @@ export default function GuestData () {
 
          
     useEffect(() => {
-        axios.get("/dummybookings").then(theData=>{
+        axios.get("/createbooking").then(theData=>{
         console.log(theData.data);
+        
         });
 
         },[] 
     );
-
-
 
     function placeBooking (e:FormEvent) {
         //  axios.post(http://localhost:8000/bookings)
@@ -66,8 +65,6 @@ export default function GuestData () {
                 <label>By checking this box you agree to our terms and conditions and privacy policy.</label>
 
                     {/* <input name="gdpr" id="gdpr" type="checkbox" checked={this.state.setGdpr}></input> */}
-
-
 
                     <button type="button" onClick={placeBooking}>Book</button>
                 </div>

@@ -35,18 +35,16 @@ export default function BookingSystem(){
         }
 
         function searchForTable () {
+
+            //prova med string literal 
             axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(resData=>{
             console.log(resData.data);            
 
             searchResult(resData.data);
-          setAvaiableTables(resData.data.length)
-           /*  if (searchData.length < 15 ){ // filtrera om längden på datum & tid är mer än 15 rader? 
-               //lagra state för rendera två olka divar
-               setShowIfBooked(true) 
-               
-            } */
-            setShowIfBooked(true) 
+            setAvaiableTables(resData.data.length)
+           
         });
+        setShowIfBooked(true)
      }
 
      return (
