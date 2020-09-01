@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:400,500,600,700&display=swap');
+
+.App {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 60px;
+}
+
+
+@media (min-width: 650px ) {
+    .App {
+        background-position: unset;
+    }
+
+}
