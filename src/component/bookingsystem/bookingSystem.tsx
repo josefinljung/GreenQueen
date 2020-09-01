@@ -3,6 +3,7 @@ import axios from "axios";
 import BookingData from "../booking/bookingData";
 import { render } from "@testing-library/react";
 import GuestData from "../guest/guestData";
+import FullyBookedData from "../fullyBookedData/fullyBookedData";
  
 export default function BookingSystem(){
 
@@ -10,22 +11,22 @@ export default function BookingSystem(){
     const [bookingDate, setBookingDate] = useState(0);
     const [bookingTime, setBookingTime] = useState('');
     const [amountOfGuest, setAmountOfGuest] = useState(0);
-    const [avaiableTables,setAvaiableTables] = useState(true);
-    const [showGuestForm,setShowGuestForm] = useState(false);
+    const [avaiableTables,setAvaiableTables] = useState(0);
+    const [showIfBooked,setShowIfBooked] = useState(false);
 
  
-        function updateDate(e: ChangeEvent<HTMLInputElement>){           
-            console.log(e.target.value)            
+        function updateDate(e: ChangeEvent<HTMLInputElement>){
+            console.log(e.target.value)
             setBookingDate(parseInt(e.target.value));
         }
 
-        function updateTime(e: ChangeEvent<HTMLSelectElement>){           
-            console.log(e.target.value)            
+        function updateTime(e: ChangeEvent<HTMLSelectElement>){
+            console.log(e.target.value)
             setBookingTime(e.target.value);        
         }
 
         function updateAmount(e: ChangeEvent<HTMLSelectElement>){
-            console.log(e.target.value)            
+            console.log(e.target.value)
             setAmountOfGuest(parseInt(e.target.value));            
         }
         
@@ -38,12 +39,13 @@ export default function BookingSystem(){
             console.log(resData.data);            
 
             searchResult(resData.data);
-
-            if (searchData.length < 15 ){ // filtrera om längden på datum & tid är mer än 15 rader? 
+          setAvaiableTables(resData.data.length)
+           /*  if (searchData.length < 15 ){ // filtrera om längden på datum & tid är mer än 15 rader? 
                //lagra state för rendera två olka divar
-               setShowGuestForm(true) 
+               setShowIfBooked(true) 
                
-            }
+            } */
+            setShowIfBooked(true) 
         });
      }
 
@@ -68,10 +70,11 @@ export default function BookingSystem(){
                 <button type="button" onClick={searchForTable}>Search</button>
             </div>
 
-             {showGuestForm ? 
+         { showIfBooked?  
+             ( avaiableTables <=15) ? 
              <GuestData></GuestData>
-             : null
-            }
+             : <FullyBookedData></FullyBookedData>
+             : <> </> }
          </React.Fragment>
             
      )
