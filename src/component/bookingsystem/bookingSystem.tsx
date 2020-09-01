@@ -51,12 +51,13 @@ export default function BookingSystem(){
         <React.Fragment>
             <div>
                 <select onChange={updateTime}>
-                <option value="0">Servings</option> 
+                <option value="0">Time</option> 
                     <option value="18:00">18:00</option> 
                     <option value="21:00">21:00</option>
                 </select>
                 <input type="date" value={bookingDate} onChange={updateDate} />
                 <select onChange={updateAmount}>
+                    <option value="0">Guests</option> 
                     <option value="1">1</option> 
                     <option value="2">2</option>
                     <option value="3">3</option> 
