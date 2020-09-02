@@ -21,7 +21,7 @@ function App() {
     <div className="App" style={{backgroundImage: `url(${imageUrl})` }}>
       <div className="App-content">
 
-    <BookingSystem></BookingSystem>
+  <BookingSystem></BookingSystem>
 
     <h1 id="header">GREEN QUEEN</h1>
     

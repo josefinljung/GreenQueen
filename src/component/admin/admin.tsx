@@ -29,7 +29,6 @@ export default function Admin(){
             <h2>All Bookings</h2>
             <ul>            
             </ul>
-            <GuestData></GuestData>
             
 
         </div>
