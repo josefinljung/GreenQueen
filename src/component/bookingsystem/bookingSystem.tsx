@@ -68,7 +68,7 @@ export default function BookingSystem(){
             </div>
 
          { showIfBooked?  
-             ( avaiableTables <=14) ? 
+             ( avaiableTables <=16) ? 
          <GuestData date={bookingDate} time={bookingTime} numberOfGuests={numberOfGuests}></GuestData>
              : <FullyBookedData></FullyBookedData>
              : <> </> }
