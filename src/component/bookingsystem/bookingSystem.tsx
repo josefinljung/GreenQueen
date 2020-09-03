@@ -4,35 +4,34 @@ import BookingData from "../booking/bookingData";
 import { render } from "@testing-library/react";
 import GuestData from "../guest/guestData";
 import FullyBookedData from "../fullyBookedData/fullyBookedData";
- 
+
+
 export default function BookingSystem(){
 
     const [searchData, setSearchData] = useState([]);
-    const [bookingDate, setBookingDate] = useState(0);
+    const [bookingDate, setBookingDate] = useState('');
     const [bookingTime, setBookingTime] = useState('');
-    const [amountOfGuest, setAmountOfGuest] = useState(0);
+    const [numberOfGuests, setNumberOfGuests] = useState(0);
     const [avaiableTables,setAvaiableTables] = useState(0);
     const [showIfBooked,setShowIfBooked] = useState(false);
 
  
         function updateDate(e: ChangeEvent<HTMLInputElement>){
-            console.log(e.target.value)
-            setBookingDate(parseInt(e.target.value));
+            setBookingDate(e.target.value);
         }
 
         function updateTime(e: ChangeEvent<HTMLSelectElement>){
-            console.log(e.target.value)
             setBookingTime(e.target.value);        
         }
 
         function updateAmount(e: ChangeEvent<HTMLSelectElement>){
-            console.log(e.target.value)
-            setAmountOfGuest(parseInt(e.target.value));            
+            setNumberOfGuests(parseInt(e.target.value));            
         }
         
         function searchResult(r: any){
             setSearchData(r) // listan med bokningar
         }
+
 
         function searchForTable () {
 
@@ -69,8 +68,8 @@ export default function BookingSystem(){
             </div>
 
          { showIfBooked?  
-             ( avaiableTables <=15) ? 
-             <GuestData></GuestData>
+             ( avaiableTables <=14) ? 
+         <GuestData date={bookingDate} time={bookingTime} numberOfGuests={numberOfGuests}></GuestData>
              : <FullyBookedData></FullyBookedData>
              : <> </> }
          </React.Fragment>
