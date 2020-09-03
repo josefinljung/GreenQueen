@@ -8,15 +8,18 @@ export default function Admin(){
 
     
     const [theBookings, setTheBookings] = useState([]);
-       
+      
+    function allBookings(res: any){
+        setTheBookings(res)
+    }
 
     useEffect(() => {
     axios.get("http://localhost:8000/bookings").then(theData=>{
-        // const data = theData.data;
-        // setTheBookings(theBookings);
-        console.log(theData.data);
+        console.log(theData);
+        allBookings(theData.data)
     })
     .catch(()=>{
+
         console.log("YEY DATA ! ")
     });
 
@@ -27,7 +30,7 @@ export default function Admin(){
         <div>
             Hello Admin
             <h2>All Bookings</h2>
-            <ul>            
+            <ul>        
             </ul>
             
 
