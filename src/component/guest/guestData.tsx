@@ -1,5 +1,6 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent, useReducer } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
+import { Route, Link } from "react-router-dom";
 
 
 interface IGuestDataProps{
@@ -65,19 +66,21 @@ export default function GuestData (props:IGuestDataProps) {
         }
 
         return (
+            <Route>
             <form onSubmit={placeBooking}>
-                <input type="string" placeholder="First Name" value={firstName} onChange={updateFirstName}></input>
-                <input type="string" placeholder="Last Name" value={lastName} onChange={updateLastName}></input>
-                <input type="string" placeholder="Email" value={email} onChange={updateEmail}></input>
-                <input type="string" placeholder="Phone" value={phone} onChange={updatePhone}></input>
+                <input type="string" placeholder="First Name" value={firstName} onChange={updateFirstName} required></input>
+                <input type="string" placeholder="Last Name" value={lastName} onChange={updateLastName} required></input>
+                <input type="string" placeholder="Email" value={email} onChange={updateEmail} required></input>
+                <input type="string" placeholder="Phone" value={phone} onChange={updatePhone} required></input>
                 <div>
 
                 <label>By checking this box you agree to our terms and conditions and privacy policy.</label>
 
-                <input name="gdpr" id="gdpr" type="checkbox" onChange={updateGdpr}></input>
-                    <button type="button" onClick={placeBooking}>Book</button>
+                <input name="gdpr" id="gdpr" type="checkbox" onChange={updateGdpr} required></input>
+                <Link to="/bookingconfirmation"><button type="button" onClick={placeBooking} disabled={!placeBooking}>Book</button></Link>
                 </div>
             </form>
+            </Route>
         )
 
            

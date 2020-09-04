@@ -1,9 +1,5 @@
 import React from 'react';
-import Booking from "./component/booking/bookingData"
-import Guest from "./component/guest/guestData"
-import BookingData from './component/booking/bookingData';
 import BookingSystem from './component/bookingsystem/bookingSystem';
-import GuestData from './component/guest/guestData';
 import '../src/App.scss';
 import desktopImage from './assets/background.jpg';
 import mobileImage from './assets/mobile-background.jpg';
@@ -16,6 +12,7 @@ import {
 import About from './component/about/about';
 import Admin from './component/admin/admin';
 import Error from './component/error/error';
+import BookingConfirmation from './component/bookingConfirmation/bookingconfirmation';
 
  function App() {
 
@@ -33,9 +30,6 @@ import Error from './component/error/error';
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/admin">Admin</Link>
-            </li>
-            <li>
               <Link to="/">Home</Link>
             </li>
           </ul>
@@ -49,6 +43,9 @@ import Error from './component/error/error';
           </Route>
           <Route exact path="/">
               <BookingSystem />
+          </Route>
+          <Route path="/bookingconfirmation">
+            <BookingConfirmation />
           </Route>
           <Route path="*">
             <Error />
