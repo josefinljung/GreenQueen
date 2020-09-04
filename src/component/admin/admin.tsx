@@ -16,10 +16,11 @@ export default function Admin(){
         console.log(theData.data);
         allBookings(// key för att se vilket objekt som ändrats
             theData.data.map((theBooking:any)=>{
-                return(<ul key={theBooking._id}>
-                    Booking Id: {theBooking.GuestId}:
-                    <li>Booking Time: {theBooking.Time}, Booking Date: {theBooking.Date.split('T')[0]}</li>
-                </ul>)
+                return(<tr key={theBooking._id}>
+                    <td>{theBooking.GuestId}</td>
+                    <td>{theBooking.Date.split('T')[0]}</td>
+                    <td>{theBooking.Time} </td>
+                    </tr>)
             })
         );
     })
@@ -29,11 +30,18 @@ export default function Admin(){
         <div>
             Hello Admin
             <h2>All Bookings</h2>
-            <ul> 
-                {theBookings}      
-            </ul>
-            
-
+            <div className="container">
+                <table className="adminHeader">
+                    <tr>
+                        <th>Booking Id:</th>
+                        <th>Date:</th>
+                        <th>Time:</th>
+                    </tr>
+                </table>
+            <table> 
+                    {theBookings} 
+            </table>
+            </div>
         </div>
     )
 }
