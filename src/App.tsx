@@ -56,7 +56,6 @@ import Error from './component/error/error';
         </Switch>
         </Router>
 
-        <BookingSystem></BookingSystem>
 
         <h1>GREEN QUEEN</h1>
 
