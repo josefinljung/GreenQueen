@@ -1,9 +1,5 @@
 import React from 'react';
-import Booking from "./component/booking/bookingData"
-import Guest from "./component/guest/guestData"
-import BookingData from './component/booking/bookingData';
 import BookingSystem from './component/bookingsystem/bookingSystem';
-import GuestData from './component/guest/guestData';
 import '../src/App.scss';
 import desktopImage from './assets/background.jpg';
 import mobileImage from './assets/mobile-background.jpg';

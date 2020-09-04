@@ -1,7 +1,5 @@
-import React, { useEffect, useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 import axios from "axios";
-import BookingData from "../booking/bookingData";
-import { render } from "@testing-library/react";
 import GuestData from "../guest/guestData";
 import FullyBookedData from "../fullyBookedData/fullyBookedData";
 
