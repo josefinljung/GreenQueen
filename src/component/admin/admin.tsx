@@ -18,8 +18,11 @@ export default function Admin(){
             theData.data.map((theBooking:any)=>{
                 return(<tr className="trTheBookings" key={theBooking._id}>
                         <td className="admintdBooking">{theBooking.GuestId}</td>
-                        <td className="admintdDate">{theBooking.Date.split('T')[0]}</td>
+                        <td className="admintdDate">{theBooking.Date}</td>
                         <td className="admintdTime">{theBooking.Time} </td>
+                        <td className="admintdGuests">{theBooking.NumberOfGuests} </td>
+
+                    
                     </tr>)
             })
         );
@@ -34,6 +37,8 @@ export default function Admin(){
                     <th className="adminthBooking">Booking Id</th>
                     <th className="adminthDate">Date</th>
                     <th className="adminthTime">Time</th>
+                    <th className="adminthGuests">Guests</th>
+
                 </tr>
                 {theBookings} 
             </table>

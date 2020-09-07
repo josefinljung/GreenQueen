@@ -7,7 +7,6 @@ import axios from "axios";
     }
 
     export default function BookingData(props: IBookingsProps){
-
     
         const [theBookings, setTheBookings] = useState([]);
            
