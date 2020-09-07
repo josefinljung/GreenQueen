@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import GuestData from "../guest/guestData";
 import FullyBookedData from "../fullyBookedData/fullyBookedData";
@@ -13,7 +13,7 @@ export default function BookingSystem(){
     const [avaiableTables,setAvaiableTables] = useState(0);
     const [showIfBooked,setShowIfBooked] = useState(false);
 
- 
+
         function updateDate(e: ChangeEvent<HTMLInputElement>){
             setBookingDate(e.target.value);
         }
@@ -28,12 +28,10 @@ export default function BookingSystem(){
         
         function searchResult(r: any){
             setSearchData(r) // listan med bokningar
+            
         }
 
-
         function searchForTable () {
-
-            //prova med string literal 
             axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(resData=>{
             console.log(resData.data);            
 
@@ -47,12 +45,12 @@ export default function BookingSystem(){
      return (
         <React.Fragment>
             <div>
-                <select onChange={updateTime}>
+                <select onChange={updateTime} required>
                 <option value="0">Time</option> 
                     <option value="18:00">18:00</option> 
                     <option value="21:00">21:00</option>
                 </select>
-                <input type="date" value={bookingDate} onChange={updateDate} />
+                <input type="date" value={bookingDate} onChange={updateDate} required/>
                 <select onChange={updateAmount}>
                     <option value="0">Guests</option> 
                     <option value="1">1</option> 
@@ -62,7 +60,7 @@ export default function BookingSystem(){
                     <option value="5">5</option> 
                     <option value="6">6</option> 
                 </select>
-                <button type="button" onClick={searchForTable}>Search</button>
+                <button type="button" onClick={searchForTable} >Search</button>
             </div>
 
          { showIfBooked?  
