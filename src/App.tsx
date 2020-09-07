@@ -1,7 +1,7 @@
 import React from 'react';
 import BookingSystem from './component/bookingsystem/bookingSystem';
 import '../src/App.scss';
-import desktopImage from './assets/background.jpg';
+import desktopImage from './assets/background-image-final.jpg';
 import mobileImage from './assets/mobile-background.jpg';
 import {
   BrowserRouter as Router,
