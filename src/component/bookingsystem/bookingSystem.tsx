@@ -19,21 +19,21 @@ export default function BookingSystem(){
         }
 
         function updateTime(e: ChangeEvent<HTMLSelectElement>){
-            setBookingTime(e.target.value);        
+            setBookingTime(e.target.value);
         }
 
         function updateAmount(e: ChangeEvent<HTMLSelectElement>){
-            setNumberOfGuests(parseInt(e.target.value));            
+            setNumberOfGuests(parseInt(e.target.value));     
         }
-        
+
         function searchResult(r: any){
             setSearchData(r) // listan med bokningar
-            
+
         }
 
         function searchForTable () {
             axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(resData=>{
-            console.log(resData.data);            
+            console.log(resData.data);
 
             searchResult(resData.data);
             setAvaiableTables(resData.data.length)
@@ -54,13 +54,13 @@ export default function BookingSystem(){
                     </select>
                 <input type="date" value={bookingDate} onChange={updateDate} required/>
                 <select onChange={updateAmount}>
-                    <option value="0">Guests</option> 
-                    <option value="1">1</option> 
+                    <option value="0">Guests</option>
+                    <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option> 
-                    <option value="4">4</option> 
-                    <option value="5">5</option> 
-                    <option value="6">6</option> 
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                 </select>
                 <button type="button" onClick={searchForTable} >Search</button>
             </div>

@@ -82,8 +82,5 @@ export default function GuestData (props:IGuestDataProps) {
             </form>
             </Route>
         )
-
-           
-            
 };
     
