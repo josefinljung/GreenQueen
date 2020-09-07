@@ -4,6 +4,7 @@
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: #e0452d;
 }
 
 #header {
@@ -19,10 +20,75 @@
     font-size: 60px;
 }
 
+ul {
+    list-style-type: none;
+    padding-top: 10px;
+    margin-left: 0;
+    li {
+        display: inline;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 2px;
+
+        a {
+            text-decoration: none;
+            color: white;            
+            transition: 0.5s;        
+        }
+        a:hover {
+            color: black;
+        }
+    }
+}
+
 
 @media (min-width: 650px ) {
     .App {
         background-position: unset;
     }
 
+}
+
+div.adminContainer {
+    height: 100vh;
+    background-color: #e0452d;
+    font-family: 'Poppins', sans-serif;
+
+    align-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+
+    h2{
+        font-size: 30px;
+
+    }
+    
+
+    table.adminBookingTable {
+        width: 100%;
+        align-content: center;
+        
+        th {
+            text-align: left;
+            font-size: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        td {
+            background: rgba(255, 255, 255, 0.9);            // padding: 2%;
+            padding: 8px;
+
+        }
+    }
 }
