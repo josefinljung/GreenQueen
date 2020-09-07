@@ -1,7 +1,7 @@
 import React from 'react';
 import BookingSystem from './component/bookingsystem/bookingSystem';
 import '../src/App.scss';
-import desktopImage from './assets/background-image-final.jpg';
+import desktopImage from './assets/nybakgrund.jpg';
 import mobileImage from './assets/mobile-background.jpg';
 import {
   BrowserRouter as Router,
@@ -52,9 +52,6 @@ import BookingConfirmation from './component/bookingConfirmation/bookingconfirma
           </Route>
         </Switch>
         </Router>
-
-
-        <h1>GREEN QUEEN</h1>
 
       </div>
     </div>

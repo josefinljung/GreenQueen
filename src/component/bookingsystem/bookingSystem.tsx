@@ -42,8 +42,10 @@ export default function BookingSystem(){
            
         });
         setShowIfBooked(true)
+        
      }
 
+     
      return (
         <React.Fragment>
             <div>
@@ -51,7 +53,7 @@ export default function BookingSystem(){
                 <option value="0">Time</option> 
                     <option value="18:00">18:00</option> 
                     <option value="21:00">21:00</option>
-                </select>
+                    </select>
                 <input type="date" value={bookingDate} onChange={updateDate} />
                 <select onChange={updateAmount}>
                     <option value="0">Guests</option> 
