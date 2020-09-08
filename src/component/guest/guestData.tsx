@@ -50,7 +50,7 @@ export default function GuestData (props: IGuestDataProps) {
     }
 
         return (
-            
+
             <React.Fragment> 
             {showBookingConfirmation ?
             <BookingConfirmation></BookingConfirmation>
