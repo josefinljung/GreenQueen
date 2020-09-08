@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 
 export default function Admin(){
@@ -21,6 +24,7 @@ export default function Admin(){
                         <td className="admintdDate">{theBooking.Date}</td>
                         <td className="admintdTime">{theBooking.Time} </td>
                         <td className="admintdGuests">{theBooking.NumberOfGuests} </td>
+                        <td className="admintdEditOrDelete"><FontAwesomeIcon icon={faEdit} /><FontAwesomeIcon icon={faTrashAlt} /></td>
 
                     
                     </tr>)
@@ -38,6 +42,7 @@ export default function Admin(){
                     <th className="adminthDate">Date</th>
                     <th className="adminthTime">Time</th>
                     <th className="adminthGuests">Guests</th>
+                    <th className="adminthEditOrDelete"></th>
 
                 </tr>
                 {theBookings} 
