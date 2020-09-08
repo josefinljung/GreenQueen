@@ -18,8 +18,7 @@ export default function GuestForm (props: IGuestFormProps){
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [gdpr, setGdpr] = useState(false);
-    const [bookingDone, setBookingDone] = useState(false)
-    const [showBookingConfirmation, setShowBookingConfirmation] = useState(false);
+    
     
 
 
