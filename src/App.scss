@@ -61,9 +61,10 @@ ul {
 
 }
 
+
+//ADMIN PAGE
+
 div.adminContainer {
-    height: 100vh;
-    background-color: #e0452d;
     font-family: 'Poppins', sans-serif;
     align-content: center;
     background-color: rgba(255, 255, 255, 0.7);
@@ -99,6 +100,27 @@ div.adminContainer {
             background: rgba(255, 255, 255, 0.9);
             padding: 8px;
 
+        }
+    }
+}
+
+//ERROR PAGE
+
+.errorContainer {
+    width: 30%;
+    margin-top: 40px;
+    margin-left: 20px;
+
+    .errorText {
+        color: white;
+        font-family: 'Poppins', sans-serif;
+
+        a {
+            color: #fac2cd; 
+        }
+
+        a:hover {
+            color: black;
         }
     }
 }
