@@ -26,16 +26,17 @@ export default function BookingSystem(){
             setNumberOfGuests(parseInt(e.target.value));     
         }
 
-        function searchResult(r: any){
-            setSearchData(r) // listan med bokningar
+        // function searchResult(r: any){
+        //     setSearchData(r) // listan med bokningar
 
-        }
+        // }
 
         function searchForTable () {
+            
             axios.get("http://localhost:8000/search?time=" + bookingTime + "&date=" + bookingDate).then(resData=>{
             console.log(resData.data);
 
-            searchResult(resData.data);
+            // searchResult(resData.data);
             setAvaiableTables(resData.data.length)
            
         });
