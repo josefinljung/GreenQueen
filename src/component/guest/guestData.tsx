@@ -5,7 +5,7 @@ import BookingConfirmation from "../bookingConfirmation/bookingconfirmation";
 import GuestForm from "../guestForm/guestForm";
 
 interface IGuestDataProps {
-
+   
     date: string;
     time: string;
     numberOfGuests: number;

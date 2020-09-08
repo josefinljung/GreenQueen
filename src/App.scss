@@ -83,8 +83,7 @@ div.adminContainer {
     h2{
         font-size: 30px;
         margin-left: 2px;
-    }
-    
+    }    
 
     table.adminBookingTable {
         width: 100%;
@@ -96,12 +95,24 @@ div.adminContainer {
             padding: 10px;
             background: rgba(255, 255, 255, 0.9);
         }
+
         td {
             background: rgba(255, 255, 255, 0.9);
             padding: 8px;
-
         }
-    }
+
+        .admintdEditOrDelete {
+            color: rgb(56, 55, 55);
+            text-align: center;
+
+            .adminEditIcon {
+                padding: 4px;
+            }
+            
+            .adminDeleteIcon {
+                padding: 4px;
+            }
+        }
 }
 
 //ERROR PAGE
@@ -123,4 +134,5 @@ div.adminContainer {
             color: black;
         }
     }
+}
 }
