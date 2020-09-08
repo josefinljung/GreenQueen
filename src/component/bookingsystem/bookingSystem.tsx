@@ -71,7 +71,6 @@ export default function BookingSystem(){
          <GuestData date={bookingDate} time={bookingTime} numberOfGuests={numberOfGuests}></GuestData>
              : <FullyBookedData></FullyBookedData>
              : <> </> }
-         </React.Fragment>
-            
+         </React.Fragment> 
      )
 }
