@@ -24,7 +24,10 @@ export default function Admin(){
                         <td className="admintdDate">{theBooking.Date}</td>
                         <td className="admintdTime">{theBooking.Time} </td>
                         <td className="admintdGuests">{theBooking.NumberOfGuests} </td>
-                        <td className="admintdEditOrDelete"><FontAwesomeIcon icon={faEdit} /><FontAwesomeIcon icon={faTrashAlt} /></td>
+                        <td className="admintdEditOrDelete">
+                            <span className="adminEditIcon"><FontAwesomeIcon icon ={faEdit} /></span>
+                            <span className="adminDeleteIcon"><FontAwesomeIcon icon={faTrashAlt}  /></span>
+                        </td>
 
                     
                     </tr>)
