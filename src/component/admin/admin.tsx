@@ -27,9 +27,7 @@ export default function Admin(){
                         <td className="admintdEditOrDelete">
                             <span className="adminEditIcon"><FontAwesomeIcon icon ={faEdit} /></span>
                             <span className="adminDeleteIcon"><FontAwesomeIcon icon={faTrashAlt}  /></span>
-                        </td>
-
-                    
+                        </td>                    
                     </tr>)
             })
         );
@@ -46,7 +44,6 @@ export default function Admin(){
                     <th className="adminthTime">Time</th>
                     <th className="adminthGuests">Guests</th>
                     <th className="adminthEditOrDelete"></th>
-
                 </tr>
                 {theBookings} 
             </table>
