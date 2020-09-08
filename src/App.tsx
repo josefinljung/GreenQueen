@@ -13,6 +13,7 @@ import About from './component/about/about';
 import Admin from './component/admin/admin';
 import Error from './component/error/error';
 import BookingConfirmation from './component/bookingConfirmation/bookingconfirmation';
+import Menu from './component/menu/menu';
 
  function App() {
 
@@ -26,6 +27,9 @@ import BookingConfirmation from './component/bookingConfirmation/bookingconfirma
       <Router>
         <nav>
           <ul>
+          <li>
+              <Link to="/menu">Menu</Link>
+            </li>
             <li>
               <Link to="/about">About</Link>
             </li>
@@ -35,6 +39,9 @@ import BookingConfirmation from './component/bookingConfirmation/bookingconfirma
           </ul>
         </nav>
         <Switch>
+        <Route path="/menu">
+            <Menu />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
