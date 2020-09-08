@@ -136,3 +136,47 @@ div.adminContainer {
     }
 }
 }
+
+// BOOKING CONTAINER
+
+.booking-container {
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 500px;
+    width: 32   0px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+    border: 40px solid rgba(29, 29, 29, 0.877);
+
+    #booking-options {
+        width: 50%;
+        border-radius: 4px;
+        height: 25px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #booking-date{
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 4px;
+        height: 25px;
+    }
+    button {
+        font-family: 'Poppins', sans-serif;
+        border-radius: 4px;
+        height: 25px;
+    }
+}
+
+//GUEST CONTAINER
+
+.guest-container {
+
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 500px;
+    width: 320px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+    border: 40px solid rgba(29, 29, 29, 0.877);
+}

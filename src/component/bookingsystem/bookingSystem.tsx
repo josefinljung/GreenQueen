@@ -47,24 +47,24 @@ export default function BookingSystem(){
      
      return (
         <React.Fragment>
-            <div>
-                <select onChange={updateTime}>
-                <option value="0">Time</option> 
-                    <option value="18:00">18:00</option> 
-                    <option value="21:00">21:00</option>
+            <div className="booking-container">
+                    <select onChange={updateTime} id="booking-options">
+                    <option value="0">Time</option> 
+                        <option value="18:00">18:00</option> 
+                        <option value="21:00">21:00</option>
+                        </select>
+                    <select onChange={updateAmount} id="booking-options">
+                        <option value="0">Guests</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
-                <input type="date" value={bookingDate} onChange={updateDate}/>
-                <select onChange={updateAmount}>
-                    <option value="0">Guests</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <button type="button" onClick={searchForTable} >Search</button>
-            </div>
+                    <input type="date" value={bookingDate} onChange={updateDate} id="booking-date"/>
+                    <button type="button" onClick={searchForTable} >Search</button>
+                </div>
 
          { showIfBooked?  
              ( avaiableTables <=14) ? 

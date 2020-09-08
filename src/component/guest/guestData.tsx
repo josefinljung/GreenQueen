@@ -1,15 +1,12 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
-import { Route, Link } from "react-router-dom";
 import BookingConfirmation from "../bookingConfirmation/bookingconfirmation";
 import GuestForm from "../guestForm/guestForm";
 
 interface IGuestDataProps {
-   
     date: string;
     time: string;
     numberOfGuests: number;
-    
 }
 
 
@@ -22,7 +19,6 @@ export default function GuestData (props: IGuestDataProps) {
     const [showBookingConfirmation, setShowBookingConfirmation] = useState(false);
 
 
-        
         function placeBooking (e:FormEvent) {
             e.preventDefault(); 
             
@@ -37,27 +33,42 @@ export default function GuestData (props: IGuestDataProps) {
                 numberOfGuests: props.numberOfGuests
             }
     
-    
             axios.post("http://localhost:8000/createbooking", dataToSend).then(theData=>{
                 
             setShowBookingConfirmation(true);
             // redirect till conf
-    
-    
             console.log(theData.data);
-            
         });
+
     }
+
+        function updateFirstNameParent (fname: string){
+            setFirstName(fname);
+        }
+
+        function updateLastNameParent (lname: string){
+            setLastName(lname);
+        }
+
+        function updateEmailParent (email: string){
+            setEmail(email);
+        }
+
+        function updatePhoneParent (phone: string){
+            setPhone(phone);
+        }
+
 
         return (
 
             <React.Fragment> 
             {showBookingConfirmation ?
             <BookingConfirmation></BookingConfirmation>
-            : <GuestForm date={props.date} time={props.time} numberOfGuests={props.numberOfGuests} placeBooking={placeBooking}></GuestForm>
+            : <GuestForm date={props.date} time={props.time} numberOfGuests={props.numberOfGuests} placeBooking={placeBooking} 
+            updateFirstNameParent={updateFirstNameParent} updateLastNameParent={updateLastNameParent} 
+            updateEmailParent={updateEmailParent} updatePhoneParent={updatePhoneParent}></GuestForm>
             } 
             </React.Fragment>
-        )
-            
+        )   
     }
     
