@@ -4,7 +4,7 @@ export default function FullyBookedData (){
 
 
 return(
-    <div> fully booked</div>
+    <div className="fullybooked-container">So sorry! It's fully booked, try a new day or time.</div>
 )
 
 }
