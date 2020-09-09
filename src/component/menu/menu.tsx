@@ -6,8 +6,10 @@ export default function Menu (){
 
         <React.Fragment>
             <img src={BounceImage} id="startpage"/>
-    <div className="menu-container">
-      
+            
+    
+    <div className="menu-container">  
+    <h1 className="menu">MENU</h1>
         <h4 id="menu-h4">Spicy corn and chick pea burger (Vegansk) </h4> 
             <p>Vegansk hamburgare av majs och kikärtor på glutenfritt bröd med tomat, saltgurka, och syrad rödlök.
             Serveras med coleslaw, sallad, tomatdressing och tortillachips.</p>
