@@ -3,7 +3,6 @@ import BounceImage from '../../assets/bounce-image.png';
 
 export default function Menu (){
     return(
-<<<<<<< HEAD
 
         <React.Fragment>
             <img src={BounceImage} id="startpage"/>
@@ -32,7 +31,6 @@ export default function Menu (){
         GRILLED BREAD MUSHROOM, ONIONS and TRUFFLE  OIL (Vegansk)
         Grillat bröd med stekt svamp och lök, tryffelolja,
         Samt liten sallad med tomatsalsa.
-=======
         <React.Fragment>
     <div className="menu-container">
       
@@ -61,7 +59,6 @@ export default function Menu (){
         <h4 id="menu-h4">GRILLED BREAD MUSHROOM, ONIONS and TRUFFLE  OIL (Vegansk)</h4>
             <p>Grillat bröd med stekt svamp och lök, tryffelolja,
             Samt liten sallad med tomatsalsa.</p>
->>>>>>> e3aaab5d36369748580a304af0d57cccff6c89bd
     </div>
     </React.Fragment>
     )
