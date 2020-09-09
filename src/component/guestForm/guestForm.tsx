@@ -11,7 +11,6 @@ interface IGuestFormProps {
     placeBooking: (e: FormEvent) => void;
 }
 
-
 export default function GuestForm (props: IGuestFormProps){
 
     const [firstName, setFirstName] = useState('');
@@ -19,7 +18,6 @@ export default function GuestForm (props: IGuestFormProps){
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [gdpr, setGdpr] = useState(false);
-
 
     function updateFirstName(e:ChangeEvent<HTMLInputElement>){
         setFirstName(e.target.value);
@@ -53,20 +51,18 @@ export default function GuestForm (props: IGuestFormProps){
 
     <React.Fragment>
         <div className="guest-container">
-                <form onSubmit={props.placeBooking}>
-                    <input type="string" placeholder="First Name" id="guest-input" value={firstName} onChange={updateFirstName} required></input>
-                    <input type="string" placeholder="Last Name" id="guest-input" value={lastName} onChange={updateLastName} required></input>
-                    <input type="string" placeholder="Email" id="guest-input" value={email} onChange={updateEmail} required></input>
-                    <input type="string" placeholder="Phone" id="guest-input" value={phone} onChange={updatePhone} required></input>
-                    <div>
+            <form onSubmit={props.placeBooking}>
+                <input type="string" placeholder="First Name" id="guest-input" value={firstName} onChange={updateFirstName} required></input>
+                <input type="string" placeholder="Last Name" id="guest-input" value={lastName} onChange={updateLastName} required></input>
+                <input type="string" placeholder="Email" id="guest-input" value={email} onChange={updateEmail} required></input>
+                <input type="string" placeholder="Phone" id="guest-input" value={phone} onChange={updatePhone} required></input>
+                <div>
                     <span>By checking this box you agree to our terms and conditions and privacy policy.</span>
                     <input name="gdpr" id="gdpr" type="checkbox" onChange={updateGdpr} required></input>
                     <button type="button" onClick={props.placeBooking} disabled={!props.placeBooking}>Book</button>
-                    </div>
+                </div>
             </form>
         </div>
     </React.Fragment>
-
-)
-
+    )
 }
