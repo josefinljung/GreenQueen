@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
-
 export default function Admin(){
 
     
@@ -35,6 +34,10 @@ export default function Admin(){
     },[])
 
     return (
+
+        <React.Fragment>
+
+        <div className="background-div">
         <div className="adminContainer">
             <h2>All Bookings</h2>
             <table className="adminBookingTable">
@@ -48,5 +51,7 @@ export default function Admin(){
                 {theBookings} 
             </table>
         </div>
+        </div>
+        </React.Fragment>
     )
 }

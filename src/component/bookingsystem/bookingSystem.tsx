@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import GuestData from "../guest/guestData";
 import FullyBookedData from "../fullyBookedData/fullyBookedData";
+import BounceImage from '../../assets/bounce-image.png';
 
 
 export default function BookingSystem(){
@@ -47,6 +48,8 @@ export default function BookingSystem(){
      
      return (
         <React.Fragment>
+            <img src={BounceImage} id="startpage"/>
+            <h1>GREEN QUEEN</h1>
             <div className="booking-container">
                     <select onChange={updateTime} id="booking-options">
                     <option value="0">Time</option> 

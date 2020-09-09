@@ -1,7 +1,10 @@
 import React from "react";
+import BounceImage from '../../assets/bounce-image.png';
 
 export default function About(){
     return(
+        <React.Fragment>
+        <img src={BounceImage} id="startpage"/>
         <div>
             <p id="about">
             In our restaurant you can enjoy the greener alternative with Plant Based Street Food, burgers, wines, quesadillas, gluten-free beers, kebabs, green smoothies, power shots and vegan snacks.
@@ -12,5 +15,6 @@ export default function About(){
             With us it is about being able to sin with a good conscience.
             </p>
         </div> 
+        </React.Fragment>
    )
 }

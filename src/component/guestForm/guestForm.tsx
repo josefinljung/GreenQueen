@@ -54,12 +54,12 @@ export default function GuestForm (props: IGuestFormProps){
     <React.Fragment>
         <div className="guest-container">
                 <form onSubmit={props.placeBooking}>
-                    <input type="string" placeholder="First Name" value={firstName} onChange={updateFirstName} required></input>
-                    <input type="string" placeholder="Last Name" value={lastName} onChange={updateLastName} required></input>
-                    <input type="string" placeholder="Email" value={email} onChange={updateEmail} required></input>
-                    <input type="string" placeholder="Phone" value={phone} onChange={updatePhone} required></input>
+                    <input type="string" placeholder="First Name" id="guest-input" value={firstName} onChange={updateFirstName} required></input>
+                    <input type="string" placeholder="Last Name" id="guest-input" value={lastName} onChange={updateLastName} required></input>
+                    <input type="string" placeholder="Email" id="guest-input" value={email} onChange={updateEmail} required></input>
+                    <input type="string" placeholder="Phone" id="guest-input" value={phone} onChange={updatePhone} required></input>
                     <div>
-                    <label>By checking this box you agree to our terms and conditions and privacy policy.</label>
+                    <span>By checking this box you agree to our terms and conditions and privacy policy.</span>
                     <input name="gdpr" id="gdpr" type="checkbox" onChange={updateGdpr} required></input>
                     <button type="button" onClick={props.placeBooking} disabled={!props.placeBooking}>Book</button>
                     </div>

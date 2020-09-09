@@ -62,6 +62,7 @@ export default function GuestData (props: IGuestDataProps) {
         return (
 
             <React.Fragment> 
+
             {showBookingConfirmation ?
             <BookingConfirmation></BookingConfirmation>
             : <GuestForm date={props.date} time={props.time} numberOfGuests={props.numberOfGuests} placeBooking={placeBooking} 

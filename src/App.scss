@@ -2,7 +2,6 @@
 
 body {
     margin: 0;
-
 }
 
 html {
@@ -16,24 +15,40 @@ html {
 }
 
 h1 {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 40px;
+    float: right;
+    padding: 1px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color:#fac2cd;
+    // color:#fac2cd;
+    color: white;
     font-size: 60px;
+    margin-top:65px;
+}
+
+#startpage {
+    height: 800px;
+    width: 800px;
+    animation: MoveUpDown 3s linear infinite;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @keyframes MoveUpDown {
+        0%, 100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 50px;
+        }
+      }
 }
 
 ul {
     list-style-type: none;
     padding-top: 10px;
-    margin-left: 0;
     margin-top: 0;
     padding-inline-start: 20px!important;
+    float:right;
+    margin-right: 14px;
 
     li {
         display: inline;
@@ -64,7 +79,11 @@ ul {
 
 //ADMIN PAGE
 
-div.adminContainer {
+.background-div {
+
+    background-color: black;
+
+    div.adminContainer {
     font-family: 'Poppins', sans-serif;
     align-content: center;
     background-color: rgba(255, 255, 255, 0.7);
@@ -113,6 +132,7 @@ div.adminContainer {
                 padding: 4px;
             }
         }
+    }
 }
 
 //ERROR PAGE
@@ -137,34 +157,55 @@ div.adminContainer {
 }
 }
 
+
+
 // BOOKING CONTAINER
 
 .booking-container {
-    background-color: rgba(0, 0, 0, 0.753);
-    height: 500px;
-    width: 32   0px;
+    background-color: rgb(36, 35, 35);
+    height: 250px;
+    width: 320px;
     float: right;
-    margin-right: 40px;
-    margin-top: 20px;
-    border: 40px solid rgba(29, 29, 29, 0.877);
+    position: fixed;
+    margin-left: 60%;
+    margin-top: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    padding-top:80px;
 
     #booking-options {
-        width: 50%;
-        border-radius: 4px;
+        width: 40%;
+        border-radius: 3px;
         height: 25px;
         font-family: 'Poppins', sans-serif;
+        background-color: white;
+        margin: 5%;
+        border: none;
+        padding: 3px;
     }
 
     #booking-date{
-        width: 100%;
+        width: 89%;
         font-family: 'Poppins', sans-serif;
-        border-radius: 4px;
+        border-radius: 3px;
         height: 25px;
+        background-color: white;
+        margin: 5%;
+        border: none;
+        padding: 3px;
     }
     button {
         font-family: 'Poppins', sans-serif;
-        border-radius: 4px;
-        height: 25px;
+        border-radius: 3px;
+        height: 30px;
+        background-color: white;
+        text-transform: uppercase;
+        font-size: 12px;
+        width: 30%;
+        margin-left: 33%;
+        margin-top: 5%;
+        border: none;
+        padding: 3px;
     }
 }
 
@@ -172,11 +213,70 @@ div.adminContainer {
 
 .guest-container {
 
-    background-color: rgba(0, 0, 0, 0.753);
-    height: 500px;
+    background-color: rgb(36, 35, 35);
+    height: 220px;
     width: 320px;
     float: right;
-    margin-right: 40px;
-    margin-top: 20px;
-    border: 40px solid rgba(29, 29, 29, 0.877);
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    
+    button {
+        font-family: 'Poppins', sans-serif;
+        border-radius: 3px;
+        height: 30px;
+        background-color: white;
+        text-transform: uppercase;
+        font-size: 12px;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%;
+        display: block;
+        border: none;
+        padding: 3px;
+    }
+    #guest-input {
+        width: 44.5%;
+        border-radius: 3px;
+        height: 25px;
+        font-family: 'Poppins', sans-serif;
+        background-color: white;
+        margin: 2%;
+        border: none;
+        padding: 2px;
+    }
+    span {
+        font-size:11px;
+        color:white;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+// CONFIRMATION CONTAINER
+
+.confirmation-container {
+
+    background-color: rgb(36, 35, 35);
+    height: 300px;
+    width: 320px;
+    float: right;
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+
+    p{
+        margin-top:125px;
+        font-size:16px;
+        color:white;
+        font-family: 'Poppins', sans-serif;
+        font-weight:300;
+    }
+
 }

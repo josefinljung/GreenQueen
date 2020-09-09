@@ -1,8 +1,9 @@
 import React from 'react';
 import BookingSystem from './component/bookingsystem/bookingSystem';
 import '../src/App.scss';
-import desktopImage from './assets/nybakgrund.jpg';
+import desktopImage from './assets/test-image.jpg';
 import mobileImage from './assets/mobile-background.jpg';
+import bounceImage from './assets/bounce-image.png';
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,6 +24,8 @@ import Menu from './component/menu/menu';
 
   return (
     <div className="App" style={{backgroundImage: `url(${imageUrl})` }}>
+      {/* <img src={bounceImage} id="startpage"/> */}
+
       <div className="App-content">
       <Router>
         <nav>

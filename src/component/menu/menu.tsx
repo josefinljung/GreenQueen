@@ -1,8 +1,12 @@
 import React from 'react';
+import BounceImage from '../../assets/bounce-image.png';
 
 export default function Menu (){
     return(
-    <div>
+
+        <React.Fragment>
+            <img src={BounceImage} id="startpage"/>
+        <div>
         Spicy corn and chick pea burger (Vegansk)
         Vegansk hamburgare av majs och kikärtor på glutenfritt bröd med tomat, saltgurka, och syrad rödlök. Serveras med coleslaw, sallad, tomatdressing och tortillachips.
         BBQ marinated pulled Vegme burger (Vegansk)
@@ -28,5 +32,6 @@ export default function Menu (){
         Grillat bröd med stekt svamp och lök, tryffelolja,
         Samt liten sallad med tomatsalsa.
     </div>
+    </React.Fragment>
     )
 }
