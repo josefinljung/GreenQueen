@@ -7,7 +7,7 @@ interface IGuestFormProps {
     updateFirstNameParent(fname: string): void;
     updateLastNameParent(lname: string): void;
     updateEmailParent(email: string): void;
-    updatePhoneParent(phone: string): void;
+    updatePhoneParent(p: string): void;
     placeBooking: (e: FormEvent) => void;
 }
 
