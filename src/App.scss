@@ -71,9 +71,7 @@ ul {
     .App {
         background-position: unset;
     }
-
 }
-
 
 //ADMIN PAGE
 
@@ -87,7 +85,6 @@ ul {
     background-color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
     
-
     margin-top: 30px;
     margin-right: 20px;
     margin-bottom: 30px;
@@ -130,6 +127,7 @@ ul {
             
             .adminDeleteIcon {
                 padding: 4px;
+                }
             }
         }
     }
@@ -139,12 +137,22 @@ ul {
 
 .errorContainer {
     width: 30%;
-    margin-top: 40px;
-    margin-left: 20px;
+    background-color: rgb(36, 35, 35);
+    height: 250px;
+    width: 320px;
+    float: right;
+    position: fixed;
+    margin-left: 60%;
+    margin-top: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    padding-top:80px;
+    text-align: center;
 
     .errorText {
         color: white;
         font-family: 'Poppins', sans-serif;
+        font-weight: 300;
 
         a {
             color: #fac2cd; 
@@ -154,8 +162,15 @@ ul {
             color: black;
         }
     }
+
+    .error-header {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 25px;
+        color: white;
+    }
 }
-}
+
 
 
 
@@ -253,7 +268,6 @@ ul {
         color:white;
         font-family: 'Poppins', sans-serif;
     }
-
 }
 
 // CONFIRMATION CONTAINER
@@ -270,15 +284,13 @@ ul {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-
     p{
-        margin-top:125px;
-        font-size:16px;
-        color:white;
-        font-family: 'Poppins', sans-serif;
-        font-weight:300;
+    margin-top:125px;
+    font-size:16px;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight:300;
     }
-
 }
 
 // MENU CONTAINER
@@ -300,10 +312,8 @@ ul {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 14px;
-
     h1 {
         font-size: 30px;
-
     }
 }
 
@@ -327,7 +337,6 @@ ul {
         color: white;
         letter-spacing: 2px;
     }
-
 }
 
 //FULLYBOOKED CONTAINER
@@ -347,6 +356,4 @@ ul {
     color:white;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-
-
 }
